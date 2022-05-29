@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Como usar &#8212; documentación de Historias_Clinicas - 2.2</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/translations.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Historias_Clinicas 2.2" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="como-usar">
+<h1>Como usar<a class="headerlink" href="#como-usar" title="Enlazar permanentemente con este título">¶</a></h1>
+<section id="descripcion-de-hisc-2-2">
+<h2>Descripción de HisC 2.2<a class="headerlink" href="#descripcion-de-hisc-2-2" title="Enlazar permanentemente con este título">¶</a></h2>
+<section id="id1">
+<h3><strong>Como usar</strong><a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h3>
+<dl>
+<dt>Trabajo Final:</dt><dd><p>Entrega Final Nivel Intermedio</p>
+<p>Alumno: Pérez Luis</p>
+</dd>
+</dl>
+<p>La app está creada para guardar visitas de pacientes. Cada vez que el dr. (usuario)
+reciba a un paciente podrá registrar sus datos principales además de poner un resumen
+de la visita. Esto le permitirá que, al finalizar la consulta, el dr. tenga la posibilidad
+de guardar un estilo de ficha médica en una base de datos.</p>
+<img alt="_images/1.png" src="_images/1.png" />
+<p>La app cuenta con la posibilidad de hacer un alta, registro, consulta, modificación y baja.</p>
+<p><strong>Nuevo:</strong>
+Para dar el alta de la visita, el usuario debe presionar “Nuevo”, de esta manera se
+habilitarán los campos Apellido, Nombre, O Social, DNI e Historia clínica, donde los campos
+obligatorios para guardar el alta son Apellido, Nombre y DNI, ya que el paciente puede no poseer
+obra social, así como también no merece guardar una historia clínica.</p>
+<p><strong>Guardar:</strong>
+Al completar los datos del paciente, si alguno de los campos Apellido, Nombre y DNI está
+vacío o con caracteres erróneos, es decir, que para los nombres se usen letras y para el DNI se
+utilicen solo números, ahí la app permitirá guardar el registro presionando “Guardar”. Al guardar
+se le asigna un ID y fecha de la visita de manera automática. Dando la posibilidad al usuario de
+que el paciente vuelva y esta nueva alta tenga otra fecha distinta a las visitas anteriores.</p>
+<p><strong>Ejemplo:</strong>
+Si completa uno o más campos de manera incorrecta la app le dará este aviso</p>
+<img alt="_images/2.png" src="_images/2.png" />
+<p><strong>Consulta:</strong> Con esta función, el usuario al seleccionar un registro y presionar el botón <strong>“Consulta”</strong>,
+se rellenarán todos los campos, permitiéndole al usuario visualizar la historia clínica guardada,
+también se habilitará la función <strong>“Modificar”</strong> por si desea editar o agregar algún dato.</p>
+<p><strong>Modificar:</strong> Una vez que los datos están cargados en entradas de texto, el usuario podrá
+guardar dicha modificación, presionando el botón <strong>“Modificar”</strong>.</p>
+<p>Se observa que el botón <strong>“Modificar”</strong> se encuentra desactivado, este estará así hasta que no se
+haga una consulta</p>
+<img alt="_images/3.png" src="_images/3.png" />
+<p><strong>Borrar:</strong> Este botón estará activo, pero se ejecuta cuando selecciona un registro, de lo contrario la app se lo pedirá.
+<strong>Ejemplo:</strong></p>
+<p>Registro no seleccionado</p>
+<img alt="_images/4.png" src="_images/4.png" />
+<p>Registro seleccionado</p>
+<img alt="_images/5.png" src="_images/5.png" />
+</section>
+<section id="datos-tecnicos">
+<h3><strong>Datos técnicos</strong><a class="headerlink" href="#datos-tecnicos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para la base de datos se utilizó SQLite3, expresiones regulares en los campos de Apellido, Nombre y DNI. También se utilizó el módulo datetime, para poder obtener la fecha del sistema actualizada.
+Las notificaciones de sucesos están en el alta, borrado de registro, o cuando el usuario ingresa datos incorrectos en ciertos campos, así como cuando intenta realizar una función sin un paso previo.
+Se escribió el código siguiendo la guía PEP8</p>
+</section>
+<section id="nuevas-funciones-de-la-version-1-2-1">
+<h3><strong>Nuevas funciones de la versión 1.2.1</strong><a class="headerlink" href="#nuevas-funciones-de-la-version-1-2-1" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Nuevas funcionalidades:</p>
+<img alt="_images/6.png" src="_images/6.png" />
+<p>Se agregó un botón <strong>“Buscar”</strong> que permite mostrar en tabla todas las coincidencias en DNI que encuentre
+en la base de datos, permitiendo ver solamente las historias clínicas del paciente que se busca,
+aprovechando que el DNI es una especie de ID por por paciente.</p>
+<p><strong>Refresh:</strong> Limpia el campo de búsqueda y restaura la tabla con todos los datos de la «base de datos”</p>
+<p><strong>Menú cascada:</strong></p>
+<img alt="_images/7.png" src="_images/7.png" />
+<p>El menú da las opciones de exportar la base de datos a un archivo .txt, así como consultar el manual y un sitio web con las obras sociales y prepagas
+Mejoras técnicas:
+Se rediseñó el código aplicando el patrón MVC y POO.</p>
+</section>
+<section id="nuevas-funciones-de-la-version-1-2-2">
+<h3><strong>Nuevas funciones de la versión 1.2.2</strong><a class="headerlink" href="#nuevas-funciones-de-la-version-1-2-2" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Se trabaja con el ORM Peewee:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">db = SqliteDatabase(&quot;hist.db&quot;)</span>
+
+<span class="go">class BaseModel(Model):</span>
+<span class="go"> class Meta():</span>
+<span class="go">     database = db</span>
+
+
+<span class="go">class Historia(BaseModel):</span>
+<span class="go">   fecha_hoy = CharField()</span>
+<span class="go">   apellido = CharField()</span>
+<span class="go">   nombre = CharField()</span>
+<span class="go">   o_social = CharField()</span>
+<span class="go">   dni_h = CharField()</span>
+<span class="go">   resumen = TextField()</span>
+
+
+<span class="go">class Funcion(Historia):</span>
+
+<span class="go">   def __init__(self) -&gt; None:</span>
+<span class="go">      pass</span>
+
+
+<span class="go">   def conectar(self, tabla):</span>
+
+<span class="go">      self.reinicio_tree(tabla)</span>
+
+<span class="go">      try:</span>
+<span class="go">            db.connect()</span>
+<span class="go">            db.create_tables([Historia])</span>
+<span class="go">            self.inserta_en_tabla(tabla)</span>
+<span class="go">      except:</span>
+<span class="go">            pass</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Historias_Clinicas</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navegación</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Como usar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#descripcion-de-hisc-2-2">Descripción de HisC 2.2</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Como usar</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datos-tecnicos"><strong>Datos técnicos</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nuevas-funciones-de-la-version-1-2-1"><strong>Nuevas funciones de la versión 1.2.1</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nuevas-funciones-de-la-version-1-2-2"><strong>Nuevas funciones de la versión 1.2.2</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="capítulo anterior">Historias_Clinicas 2.2</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Búsqueda rápida</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Ir a" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2022, Luis Pérez "Diplomatura Python UTN".
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/usage.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
