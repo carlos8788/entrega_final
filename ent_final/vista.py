@@ -31,7 +31,7 @@ class Ventana():
         
         #root.geometry('900x850')
         a = self.root.config(bg='#c8c6ae')
-        self.root.title('HisC 1.2.1')
+        self.root.title('HisC 1.2.2')
 
         #--------------Configuración de Frame1-------------#
         caja_1 = Frame(self.root, bg='#c8c6ae', width=900, height=300)
