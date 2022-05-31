@@ -37,9 +37,11 @@ class MenuCascada:
                 webbrowser.open_new(self.path)
 
         def version(self):
-                messagebox.showinfo('Version 2.2.0', "Versión aplicando POO\nY nuevas funciones\nConsulte el Manual para\nmás información")
+                messagebox.showinfo('Version 2.2.0', "Versión aplicando POO\
+                        \nY nuevas funciones\nConsulte el Manual para\
+                        \nmás información")
 
         def manual(self):
-                self.path = 'docs/build/html/index.html'
+                self.path = 'https://carlos8788.github.io/manual_intermedio/'
                 webbrowser.open_new(self.path)
                 
